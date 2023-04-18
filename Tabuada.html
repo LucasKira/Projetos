@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+
+<style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+section {
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+input[type="number"], input[type="button"], select {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+input[type="button"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+select {
+    margin-top: 1rem;
+    height: 20rem;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+</style>
+
+<body>
+    
+    <header>TABUADA</header>
+
+    <section>
+        <p>Número: <input type="number" id="numero"> <input type="button" value="contar" onclick="tabuada()"></p>
+        <select name="res" id="res" size="10">
+            <option>Digite um número</option>
+        </select>
+    </section>
+
+    <footer>&copy;LucasFernandes</footer>
+
+    <script>
+        function tabuada(){
+            
+            let numero = window.document.getElementById('numero')
+            let res = window.document.getElementById('res')
+            let n = Number(numero.value)
+            
+            res.innerHTML = ''
+            for(c = 0; c <= 10; c += 1){
+                
+                let item = window.document.createElement('option')
+                item.text = `${n} X ${c} = ${n*c}`               
+                res.appendChild(item)                              
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
