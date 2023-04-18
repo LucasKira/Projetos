@@ -5,8 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contar</title>
-    <link rel="stylesheet" href="estilo.css">
+    
 </head>
+
+<style>
+    /* Definindo uma fonte bonita e elegante para todo o documento */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  /* Estilizando o cabeçalho */
+  header {
+    background-color: #6D4C41;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 2em;
+  }
+  
+  /* Estilizando a seção */
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #D7CCC8;
+  }
+  
+  /* Estilizando a div com os dados de entrada */
+  #dados {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #888888;
+    margin-right: 50px;
+    text-align: center;
+  }
+    
+  /* Estilizando a div com o resultado */
+  #res {
+    background-color: #6D4C41;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #888888;
+    width: 500px;
+  }
+  
+  /* Estilizando o rodapé */
+  footer {
+    background-color: #6D4C41;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+</style>
+
+
 
 <body>
     <header>Contador de números!</header>
