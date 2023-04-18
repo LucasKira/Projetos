@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <header>Contador de números!</header>
+    <section> 
+        <div id="dados">
+            <p>Início <input type="number" id="txti"></p>
+            <p>Fim   <input type="number" id="txtf"></p>
+            <p>Passo <input type="number" id="txtp"></p>
+            <p><input type="button" value="Contar" onclick="contar()"></p>
+        </div>
+        
+        <div id="res">
+            Preparando contagem...
+        </div>
+
+    </section>
+    <footer>&copy;LucasFernandes</footer>
+
+
+    <script>
+        function contar(){
+            
+            let inicio = window.document.getElementById('txti')
+            let fim = window.document.getElementById('txtf')
+            let passo = window.document.getElementById('txtp')
+            let res = window.document.getElementById('res')
+            
+            
+            if (inicio.value == 0 || fim.value == 0 || passo.value == 0){
+                alert('[ERRO] Preencha todos os campos!')
+            }
+            else{
+                res.innerHTML = 'Contando:<br><br>'
+                let i = Number(inicio.value)
+                let f = Number(fim.value)
+                let p = Number(passo.value)
+                
+                //Contagem crescente...
+                if (i < f){
+                    for(let c = i; c <= f; c += p){
+                        res.innerHTML += ` ${c} \u{1f449}`
+                    }
+                }
+                //Contagem regressiva...
+                else if(i > f){
+                    for (let c = i; c >= f; c-= p)
+                        res.innerHTML += `${c} \u{1f449}`
+                }
+                //Verificando se a pessoa digitou numeros iguais...
+                else{
+                    alert('O Início e o Fim estão iguais. Tem que por o valor certinho ali , meu chapa!!')
+                }
+            }res.innerHTML += `${' '}\u{1f3c1}`
+          
+            
+            
+
+        }
+    </script>
+</body>
+</html>
