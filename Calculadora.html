@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .fundo{
+            background-image: linear-gradient(45deg, rgb(3, 21, 44),rgb(140, 220, 240) );
+            height: 100vh;
+            width: 100%;
+            
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .calculadora{
+            background-color: rgba(0, 0, 0, 0.795);
+            color: aliceblue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 15px;
+            padding: 20px;
+            
+            box-shadow: 5px 5px 5px rgb(44, 41, 41);           
+            
+        }
+        .botao{
+            background-color: rgb(65, 63, 63);
+            border: none;
+            color: aliceblue;            
+            font-size: 25px;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            transform: translate(2px);            
+        }
+        .botao:hover{
+            background-color: black;
+        }
+        #nome{
+            text-align: center;
+        }
+        #botao0{
+            width: 102px;
+        }
+        #botaoResultado{
+            height: 102px;
+        }
+        .resultado{
+            height: 30px;
+            width: 205px;
+            background-color: aliceblue;
+            margin: 5px;
+            transform: translate();
+            color: black;
+            text-align: right;
+            border: 3px;
+            border-radius: 4px;           
+            
+        }
+        #calc{
+            position: relative;
+            text-align: center;
+        }
+
+    </style>
+
+    
+    <div class="fundo"> 
+        <h1 id="nome">Lucas Fernandes Developer</h1>
+        <div class="calculadora">
+            <h1 id="calc">Calculadora</h1>
+            <p id="result" class="resultado"></p>
+            <table>
+                <tr class="coluna1">
+                    <td><button class="botao" id="botaoC" onclick="limpar()">C</button></td>
+                    <td><button class="botao" id="botaoMenor" onclick="apagar()"><</button></td>
+                    <td><button class="botao" id="botaoDivisao" onclick="calculo('/')">/</button></td>
+                    <td><button class="botao" id="botaoMultiplicacao" onclick="calculo('*')">x</button></td>
+                </tr>
+                
+                <tr>
+                    <td><button class="botao" id="botao7" onclick="calculo(7)">7</button></td>
+                    <td><button class="botao" id="botao8" onclick="calculo(8)">8</button></td>
+                    <td><button class="botao" id="botao9" onclick="calculo(9)">9</button></td>
+                    <td><button class="botao" id="botaoSubtracao" onclick="calculo('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" id="botao4" onclick="calculo(4)">4</button></td>
+                    <td><button class="botao" id="botao5" onclick="calculo(5)">5</button></td>
+                    <td><button class="botao" id="botao6" onclick="calculo(6)">6</button></td>
+                    <td><button class="botao" id="botaoAdicao" onclick="calculo('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" id="botao1" onclick="calculo(1)">1</button></td>
+                    <td><button class="botao" id="botao2" onclick="calculo(2)">2</button></td>
+                    <td><button class="botao" id="botao3" onclick="calculo(3)">3</button></td>
+                    <td rowspan="2"><button class="botao" id="botaoResultado" onclick="calcular()">=</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="botao" id="botao0" onclick="calculo(0)">0</button></td>
+                    <td><button class="botao" id="botaoPonto" onclick="calculo('.')">.</button></td>
+                    
+                    
+                </tr>             
+
+                
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        
+        function calculo (num){
+            var resultado = window.document.getElementById('result')
+            resultado.innerHTML = resultado.innerHTML + num
+        }
+        
+        function limpar(){
+            var resultado = document.getElementById('result')
+            resultado.innerHTML = ''
+        }
+        function apagar(){
+            var resultado = document.getElementById('result')
+            resultado.innerHTML = resultado.innerHTML.substring(0 , resultado.innerHTML.length-1)                
+        }
+        function calcular(){
+            var resultado = document.getElementById('result').innerHTML
+            if (resultado){
+                
+                document.getElementById('result').innerHTML = eval(resultado)
+            }
+        }
+
+        
+                  
+    </script>
+
+
+</body>
+</html>
